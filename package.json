@@ -1,0 +1,50 @@
+{
+  "name": "saas-portfolio-demos",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev:ai": "npm --workspace apps/ai-saas-platform run dev",
+    "dev:crm": "npm --workspace apps/smart-crm run dev",
+    "dev:finance": "npm --workspace apps/finance-dashboard run dev",
+    "dev:ecommerce": "npm --workspace apps/ecommerce-platform run dev",
+    "dev:chat": "npm --workspace apps/ai-chat-app run dev",
+    "dev:tasks": "npm --workspace apps/task-manager run dev",
+    "build:ai": "npm --workspace apps/ai-saas-platform run build",
+    "build:crm": "npm --workspace apps/smart-crm run build",
+    "build:finance": "npm --workspace apps/finance-dashboard run build",
+    "build:ecommerce": "npm --workspace apps/ecommerce-platform run build",
+    "build:chat": "npm --workspace apps/ai-chat-app run build",
+    "build:tasks": "npm --workspace apps/task-manager run build",
+    "build": "npm --workspaces --if-present run build",
+    "lint": "npm --workspaces --if-present run lint"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "dependencies": {
+    "@radix-ui/react-dialog": "latest",
+    "@radix-ui/react-slot": "latest",
+    "class-variance-authority": "latest",
+    "clsx": "latest",
+    "framer-motion": "latest",
+    "lucide-react": "latest",
+    "next": "^15.5.20",
+    "react": "latest",
+    "react-dom": "latest",
+    "tailwind-merge": "latest"
+  },
+  "devDependencies": {
+    "@types/node": "latest",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "autoprefixer": "latest",
+    "eslint": "latest",
+    "eslint-config-next": "^15.5.20",
+    "postcss": "latest",
+    "tailwindcss": "^3.4.17",
+    "typescript": "latest"
+  }
+}
