@@ -9,12 +9,12 @@ Vercel Deploy
 
 
 
-| Demo | Root Directory | Build Command | Output Directory |
+| Demo | Root Directory |  | Output Directory |
 | --- | --- | --- | --- |
-| AI SaaS Platform | `.` | `npm run build:ai` | `apps/ai-saas-platform/.next` |
-| Smart CRM | `.` | `npm run build:crm` | `apps/smart-crm/.next` |
-| Finance Dashboard | `.` | `npm run build:finance` | `apps/finance-dashboard/.next` |
-| E-Commerce Platform | `.` | `npm run build:ecommerce` | `apps/ecommerce-platform/.next` |
-| AI Chat Application | `.` | `npm run build:chat` | `apps/ai-chat-app/.next` |
-| Task Management Platform | `.` | `npm run build:tasks` | `apps/task-manager/.next` |
+| AI SaaS Platform | `.` | | `apps/ai-saas-platform/.next` |
+| Smart CRM | `.` |  | `apps/smart-crm/.next` |
+| Finance Dashboard | `.` |  | `apps/finance-dashboard/.next` |
+| E-Commerce Platform | `.` |  | `apps/ecommerce-platform/.next` |
+| AI Chat Application | `.` |  | `apps/ai-chat-app/.next` |
+| Task Management Platform | `.` |  | `apps/task-manager/.next` |
 
