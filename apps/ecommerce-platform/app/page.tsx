@@ -1,16 +1,16 @@
 ﻿"use client";
 
 import { useMemo, useState } from "react";
-import { BarChart3, Minus, Plus, Search, ShoppingBag, Sparkles, X, ChevronLeft } from "lucide-react";
+import { BarChart3, Minus, Plus, Search, ShoppingBag, Sparkles, ChevronLeft } from "lucide-react";
 import { AnimatedSection, Badge, Bars, Button, Card, Input, PageShell, Select } from "@portfolio/ui";
 
 const products = [
-  { id: 1, name: "Наушники Aurora", category: "Аудио", price: 329, desc: "Беспроводные наушники с активным шумоподавлением и объёмным звучанием. Эргономичный дизайн, 40 часов работы без подзарядки.", specs: "Частотный диапазон: 20Hz-40kHz | Импеданс: 32 Ом | Bluetooth 5.3 | ANC", img: "/products/ejZtdvb.png" },
-  { id: 2, name: "Часы Obsidian", category: "Гаджеты", price: 449, desc: "Премиальные смарт-часы с AMOLED-дисплеем и сапфировым стеклом. Встроенный GPS, пульсометр, 14 дней автономности.", specs: "Дисплей: 1.43 AMOLED | Батарея: 14 дней | Защита: 5ATM | GPS", img: "/products/LZKKrE4.png" },
-  { id: 3, name: "Камера Nebula", category: "Для авторов", price: 899, desc: "Беззеркальная камера с полнокадровым сенсором 24 Мп и съёмкой 4K 120fps. Продвинутая стабилизация и быстрый автофокус.", specs: "Сенсор: Full Frame 24MP | ISO: 100-102400 | Стаб.: 5 осей | 4K 120fps", img: "/products/ejZtdvb.png" },
-  { id: 4, name: "Клавиатура Lumen", category: "Рабочее место", price: 199, desc: "Механическая клавиатура с hot-swap переключателями, программируемыми клавишами и RGB-подсветкой.", specs: "Переключатели: Gateron Red | Раскладка: ANSI 100% | USB-C | Hot-swap", img: "/products/LZKKrE4.png" },
-  { id: 5, name: "Колонка Slate", category: "Аудио", price: 279, desc: "Портативная Bluetooth-колонка с объёмным звучанием 360°, влагозащитой IP67 и 20 часами музыки.", specs: "Мощность: 30W | Батарея: 20 ч | Bluetooth 5.2 | IP67", img: "/products/ejZtdvb.png" },
-  { id: 6, name: "Док-станция Flux Pro", category: "Рабочее место", price: 249, desc: "Универсальная док-станция с Thunderbolt 4, HDMI 2.1, кардридером и зарядкой 100W для всего рабочего стола.", specs: "Порты: 2x USB-C, 3x USB-A, HDMI 2.1, SD | 100W PD", img: "/products/LZKKrE4.png" }
+  { id: 1, name: "Наушники Aurora", category: "Аудио", price: 329, desc: "Беспроводные наушники с активным шумоподавлением и высоким разрешением. Кожаные амбушюры, 40 часов работы от аккумулятора.", specs: "Частотный диапазон: 20Hz-40kHz | Импеданс: 32 Ом | Bluetooth 5.3 | ANC", img: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=600&h=400&fit=crop" },
+  { id: 2, name: "Часы Obsidian", category: "Гаджеты", price: 449, desc: "Элитные умные-часы с AMOLED-дисплеем и сапфировым стеклом. Встроенные GPS, пульсометр, 14 дней автономности.", specs: "Дисплей: 1.43 AMOLED | Батарея: 14 дней | Защита: 5ATM | GPS", img: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600&h=400&fit=crop" },
+  { id: 3, name: "Камера Nebula", category: "Мир вокруг", price: 899, desc: "Беззеркальная камера с полнокадровым сенсором 24 Мп и съемкой 4K 120fps. Поддерживает сменные объективы и быструю серийную съемку.", specs: "Сенсор: Full Frame 24MP | ISO: 100-102400 | Серия: 5 кадров | 4K 120fps", img: "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=600&h=400&fit=crop" },
+  { id: 4, name: "Клавиатура Lumen", category: "Рабочее место", price: 199, desc: "Механическая клавиатура с hot-swap переключателями, RGB-подсветкой и алюминиевым корпусом.", specs: "Переключатели: Gateron Red | Раскладка: ANSI 100% | USB-C | Hot-swap", img: "https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=600&h=400&fit=crop" },
+  { id: 5, name: "Колонка Slate", category: "Аудио", price: 279, desc: "Портативная Bluetooth-колонка с объемным звучанием 360°, защитой IP67 и 20 часами игры.", specs: "Мощность: 30W | Батарея: 20 ч | Bluetooth 5.2 | IP67", img: "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=600&h=400&fit=crop" },
+  { id: 6, name: "Док-станция Flux Pro", category: "Рабочее место", price: 249, desc: "Универсальная док-станция с Thunderbolt 4, HDMI 2.1, картридером и зарядкой 100W для всех устройств сразу.", specs: "Порты: 2x USB-C, 3x USB-A, HDMI 2.1, SD | 100W PD", img: "https://images.unsplash.com/photo-1611078489935-0cb964de46d6?w=600&h=400&fit=crop" }
 ];
 
 export default function EcommercePage() {
@@ -30,14 +30,16 @@ export default function EcommercePage() {
   return (
     <PageShell accent="rose">
       <AnimatedSection className="mb-6 grid gap-5 lg:grid-cols-[1.15fr_.85fr]">
-        <div><Badge>E-Commerce Платформа</Badge><h1 className="mt-4 text-3xl font-semibold md:text-6xl">Премиальный интернет-магазин с визуальной админ-аналитикой.</h1><p className="mt-4 max-w-2xl text-slate-400">Статический каталог товаров, поиск, категории, карточка товара, корзина и панели продаж в стиле админки.</p></div>
-        <Card className="relative overflow-hidden"><div className="absolute inset-0 bg-gradient-to-br from-rose-400/20 to-cyan-400/10" /><div className="relative"><ShoppingBag className="mb-8 h-10 w-10 text-rose-300" /><p className="text-3xl font-semibold md:text-5xl">$42.8K</p><p className="text-slate-400">Демо-продажи за месяц</p><Bars data={[20, 34, 25, 48, 52, 64, 58]} color="from-rose-400 to-orange-500" /></div></Card>
+        <div><Badge>E-Commerce площадка</Badge><h1 className="mt-4 text-3xl font-semibold md:text-6xl">Элитный онлайн-магазин с современной системой управления.</h1><p className="mt-4 max-w-2xl text-slate-400">Демонстрация товаров, фильтр, корзина, детальный просмотр с плавными переходами и понятным интерфейсом.</p></div>
+        <Card className="relative overflow-hidden"><div className="absolute inset-0 bg-gradient-to-br from-rose-400/20 to-cyan-400/10" /><div className="relative"><ShoppingBag className="mb-8 h-10 w-10 text-rose-300" /><p className="text-3xl font-semibold md:text-5xl">$42.8K</p><p className="text-slate-400">Общая выручка за месяц</p><Bars data={[20, 34, 25, 48, 52, 64, 58]} color="from-rose-400 to-orange-500" /></div></Card>
       </AnimatedSection>
 
       {view === "detail" && selected ? (
         <div className="grid gap-5 xl:grid-cols-[1fr_360px]">
           <Card className="overflow-hidden p-0">
-            <img src={selected.img} alt={selected.name} className="h-72 w-full object-cover" />
+            <div className="aspect-[3/2] w-full overflow-hidden bg-slate-900">
+              <img src={selected.img} alt={selected.name} className="h-full w-full object-contain p-4" />
+            </div>
             <div className="p-6">
               <div className="mb-4 flex items-center gap-3">
                 <Button variant="ghost" size="sm" onClick={() => setView("grid")}><ChevronLeft className="h-4 w-4" /> Назад</Button>
@@ -54,15 +56,17 @@ export default function EcommercePage() {
           </Card>
           <div className="space-y-5">
             <Card><h3 className="mb-4 font-semibold">Корзина</h3>{cart.length === 0 ? <p className="text-sm text-slate-400">Корзина пуста.</p> : cart.map((id, index) => { const product = products.find((item) => item.id === id)!; return <div key={"ci" + id + "-" + index} className="flex items-center justify-between border-b border-white/5 py-3 text-sm"><span>{product.name}</span><span>${product.price}</span></div>; })}<div className="mt-4 flex justify-between text-lg font-semibold"><span>Итого</span><span>${total}</span></div></Card>
-            <Card><h3 className="mb-4 flex items-center gap-2 font-semibold"><BarChart3 className="h-4 w-4 text-cyan-300" /> Админ-панель</h3>{["Заказы", "Конверсия", "Постоянные клиенты"].map((label, index) => <div key={label} className="flex justify-between rounded-2xl p-3 hover:bg-white/[.06]"><span>{label}</span><span>{[1284, "8.4%", "42%"][index]}</span></div>)}</Card>
+            <Card><h3 className="mb-4 flex items-center gap-2 font-semibold"><BarChart3 className="h-4 w-4 text-cyan-300" /> Аналитика</h3>{["Просмотры", "Конверсия", "Средний чек"].map((label, index) => <div key={label} className="flex justify-between rounded-2xl p-3 hover:bg-white/[.06]"><span>{label}</span><span>{[1284, "8.4%", "42%"][index]}</span></div>)}</Card>
           </div>
         </div>
       ) : (
         <div className="grid gap-5 xl:grid-cols-[1fr_360px]">
           <div className="space-y-5">
-            <Card className="flex flex-col gap-3 md:flex-row"><div className="relative flex-1"><Search className="absolute left-3 top-3.5 h-4 w-4 text-slate-500" /><Input className="pl-10" placeholder="Поиск товаров" value={query} onChange={(event) => setQuery(event.target.value)} /></div><Select value={category} onChange={setCategory} options={["Все", "Аудио", "Гаджеты", "Для авторов", "Рабочее место"]} /></Card>
+            <Card className="flex flex-col gap-3 md:flex-row"><div className="relative flex-1"><Search className="absolute left-3 top-3.5 h-4 w-4 text-slate-500" /><Input className="pl-10" placeholder="Поиск товаров" value={query} onChange={(event) => setQuery(event.target.value)} /></div><Select value={category} onChange={setCategory} options={["Все", "Аудио", "Гаджеты", "Мир вокруг", "Рабочее место"]} /></Card>
             <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">{filtered.map((product) => <Card key={product.id} className="group cursor-pointer overflow-hidden p-0" onClick={() => openDetail(product)}>
-              <img src={product.img} alt={product.name} className="h-44 w-full object-cover transition group-hover:scale-[1.02]" />
+              <div className="aspect-[3/2] w-full overflow-hidden bg-slate-900">
+                <img src={product.img} alt={product.name} className="h-full w-full object-contain p-3 transition group-hover:scale-[1.02]" />
+              </div>
               <div className="p-4">
                 <div className="flex items-start justify-between gap-3">
                   <div><h3 className="font-semibold">{product.name}</h3><p className="text-sm text-slate-400">{product.category}</p></div>
@@ -74,7 +78,7 @@ export default function EcommercePage() {
           </div>
           <div className="space-y-5">
             <Card><div className="mb-4 flex items-center justify-between"><h2 className="font-semibold">Корзина</h2><Badge>{cart.length} шт.</Badge></div>{cart.length === 0 ? <p className="text-sm text-slate-400">Корзина пуста.</p> : cart.map((id, index) => { const product = products.find((item) => item.id === id)!; return <div key={"c" + id + "-" + index} className="flex items-center justify-between border-b border-white/5 py-3 text-sm"><span>{product.name}</span><button onClick={() => setCart(cart.filter((_, ci) => ci !== index))} className="text-rose-300"><Minus className="h-4 w-4" /></button></div>; })}<div className="mt-4 flex justify-between text-lg font-semibold"><span>Итого</span><span>${total}</span></div></Card>
-            <Card><h3 className="mb-4 flex items-center gap-2 font-semibold"><BarChart3 className="h-4 w-4 text-cyan-300" /> Админ-панель</h3>{["Заказы", "Конверсия", "Постоянные клиенты"].map((label, index) => <div key={label} className="flex justify-between rounded-2xl p-3 hover:bg-white/[.06]"><span>{label}</span><span>{[1284, "8.4%", "42%"][index]}</span></div>)}<div className="mt-4 rounded-3xl bg-white/[.05] p-4"><Sparkles className="mb-2 text-rose-300" /><p className="text-sm text-slate-400">Без оформления заказа и платежей. Только визуальное демо.</p></div></Card>
+            <Card><h3 className="mb-4 flex items-center gap-2 font-semibold"><BarChart3 className="h-4 w-4 text-cyan-300" /> Аналитика</h3>{["Просмотры", "Конверсия", "Средний чек"].map((label, index) => <div key={label} className="flex justify-between rounded-2xl p-3 hover:bg-white/[.06]"><span>{label}</span><span>{[1284, "8.4%", "42%"][index]}</span></div>)}<div className="mt-4 rounded-3xl bg-white/[.05] p-4"><Sparkles className="mb-2 text-rose-300" /><p className="text-sm text-slate-400">Все показатели растут благодаря умной аналитике. Чистая прибыль растёт.</p></div></Card>
           </div>
         </div>
       )}
