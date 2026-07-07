@@ -1,0 +1,6 @@
+{
+  "buildCommand": "npm run build:crm",
+  "outputDirectory": "apps/smart-crm/.next",
+  "framework": "nextjs",
+  "installCommand": "npm install"
+}
