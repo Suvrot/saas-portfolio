@@ -16,7 +16,7 @@
 - Таблица документов, список пользователей, настройки
 - Sidebar, переключение вкладок, loading skeleton, fake AI ответы
 
-**Live:** https://ai-saas-platform-dj7lx74z2-supermax44676-5946s-projects.vercel.app
+**Live:** https://ai-saas-platform-delta.vercel.app
 
 ---
 
@@ -28,7 +28,7 @@
 - Календарь, уведомления, сообщения
 - Поиск, изменение статуса сделки, статическая аналитика
 
-**Live:** https://smart-d1g76ugoi-supermax44676-5946s-projects.vercel.app
+**Live:** https://smart-crm-vert.vercel.app
 
 ---
 
@@ -40,7 +40,7 @@
 - Круговая диаграмма распределения активов
 - Последние транзакции, карточки статистики, список акций
 
-**Live:** https://finance-dashboard-m1nwtiilb-supermax44676-5946s-projects.vercel.app
+**Live:** https://finance-dashboard-one-tau-71.vercel.app
 
 ---
 
@@ -52,7 +52,7 @@
 - Страница товара с описанием
 - Админ-панель со статистикой продаж
 
-**Live:** https://ecommerce-platform-1y8y8gy2c-supermax44676-5946s-projects.vercel.app
+**Live:** https://ecommerce-platform-black-tau.vercel.app
 
 ---
 
@@ -64,7 +64,7 @@
 - Fake typing и fake AI ответы через 2 секунды
 - Загрузка файлов с фиктивной обработкой
 
-**Live:** https://ai-chat-cjz3u427k-supermax44676-5946s-projects.vercel.app
+**Live:** https://ai-chat-app-pink-six.vercel.app
 
 ---
 
@@ -76,7 +76,7 @@
 - Проекты, команда, приоритеты, статусы, labels
 - Модальное окно задачи с редактированием статуса
 
-**Live:** https://task-manager-lxiayhuh2-supermax44676-5946s-projects.vercel.app
+**Live:** https://task-manager-rho-two-90.vercel.app
 
 ---
 
