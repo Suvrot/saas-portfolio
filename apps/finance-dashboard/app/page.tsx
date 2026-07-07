@@ -23,13 +23,13 @@ export default function FinancePage() {
   return (
     <PageShell accent="emerald">
       <AnimatedSection className="mb-6 flex flex-col justify-between gap-5 lg:flex-row lg:items-end">
-        <div><Badge>Финансовая панель</Badge><h1 className="mt-4 text-4xl font-semibold md:text-6xl">Аналитика личного капитала с эффектной рыночной визуализацией.</h1><p className="mt-4 max-w-2xl text-slate-400">Статические балансы, инвестиции, криптовалюты, транзакции, круговая диаграмма и переключение периода для портфолио.</p></div>
-        <div className="flex gap-2">{periods.map((item) => <Button key={item} variant={period === item ? "default" : "secondary"} onClick={() => setPeriod(item as keyof typeof market)}>{item}</Button>)}</div>
+        <div><Badge>Финансовая панель</Badge><h1 className="mt-4 text-3xl font-semibold md:text-6xl">Аналитика личного капитала с эффектной рыночной визуализацией.</h1><p className="mt-4 max-w-2xl text-slate-400">Статические балансы, инвестиции, криптовалюты, транзакции, круговая диаграмма и переключение периода для портфолио.</p></div>
+        <div className="flex flex-wrap gap-2">{periods.map((item) => <Button key={item} variant={period === item ? "default" : "secondary"} onClick={() => setPeriod(item as keyof typeof market)}>{item}</Button>)}</div>
       </AnimatedSection>
       <div className="grid gap-5 xl:grid-cols-[1fr_360px]">
         <div className="space-y-5">
-          <Card><div className="mb-4 flex items-center justify-between"><div><p className="text-sm text-slate-400">Общий баланс</p><h2 className="text-4xl font-semibold">$148,027.21</h2></div><Select value={filter} onChange={setFilter} options={["Все активы", "Акции", "Крипто", "Доходы"]} /></div><LineChart data={data} color="#34d399" className="h-72" /></Card>
-          <div className="grid gap-4 md:grid-cols-4">{financeCards.map(({ Icon, label, value, trend }) => <Card key={label} className="hover:-translate-y-1"><Icon className="mb-4 h-5 w-5 text-emerald-300" /><p className="text-sm text-slate-400">{label}</p><p className="text-2xl font-semibold">{value}</p><p className="mt-2 text-sm text-emerald-300">{trend}</p></Card>)}</div>
+          <Card><div className="mb-4 flex items-center justify-between"><div><p className="text-sm text-slate-400">Общий баланс</p><h2 className="text-3xl font-semibold md:text-4xl">$148,027.21</h2></div><Select value={filter} onChange={setFilter} options={["Все активы", "Акции", "Крипто", "Доходы"]} /></div><LineChart data={data} color="#34d399" className="h-72" /></Card>
+          <div className="grid grid-cols-2 gap-4 md:grid-cols-4">{financeCards.map(({ Icon, label, value, trend }) => <Card key={label} className="hover:-translate-y-1"><Icon className="mb-4 h-5 w-5 text-emerald-300" /><p className="text-sm text-slate-400">{label}</p><p className="text-2xl font-semibold">{value}</p><p className="mt-2 text-sm text-emerald-300">{trend}</p></Card>)}</div>
           <Card><h3 className="mb-4 font-semibold">Последние транзакции</h3>{transactions.map((item, index) => <div key={item} className="flex items-center justify-between border-b border-white/5 py-3 text-sm"><span>{item}</span><span className={index % 2 ? "text-emerald-300" : "text-rose-300"}>{index % 2 ? "+$" : "-$"}{(index + 1) * 420}.00</span></div>)}</Card>
         </div>
         <div className="space-y-5">

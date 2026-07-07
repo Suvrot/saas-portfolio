@@ -27,12 +27,12 @@ export default function AISaaSPage() {
 
   return (
     <PageShell accent="cyan">
-      <div className="mb-6 flex items-center justify-between">
+      <div className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div>
           <Badge>AI SaaS Платформа</Badge>
-          <h1 className="mt-4 text-4xl font-semibold tracking-tight md:text-6xl">Командный центр для интеллектуальной работы с документами.</h1>
+          <h1 className="mt-4 text-3xl font-semibold tracking-tight md:text-6xl">Командный центр для интеллектуальной работы с документами.</h1>
         </div>
-        <Button variant="secondary" onClick={() => setSidebarOpen(!sidebarOpen)}><Menu className="h-4 w-4" /> Меню</Button>
+        <Button variant="secondary" className="hidden lg:inline-flex" onClick={() => setSidebarOpen(!sidebarOpen)}><Menu className="h-4 w-4" /> Меню</Button>
       </div>
       <div className="grid gap-5 lg:grid-cols-[260px_1fr]">
         <motion.aside animate={{ width: sidebarOpen ? 260 : 76 }} className="hidden overflow-hidden rounded-3xl border border-white/10 bg-black/35 p-4 backdrop-blur-2xl lg:block">
@@ -40,8 +40,8 @@ export default function AISaaSPage() {
           <nav className="space-y-2">{tabs.map((item) => <button key={item} onClick={() => setTab(item)} className={cn("flex w-full items-center gap-3 rounded-2xl px-3 py-3 text-left text-sm text-slate-400 hover:bg-white/[.07] hover:text-white", tab === item && "bg-cyan-400/15 text-cyan-200")}><Activity className="h-4 w-4" />{sidebarOpen && item}</button>)}</nav>
         </motion.aside>
         <AnimatedSection className="space-y-5">
-          <div className="grid gap-4 md:grid-cols-4">{[["Обработано", "98.4K"], ["Точность", "97.8%"], ["Сэкономлено", "418 ч"], ["Риски", "32"]].map(([label, value]) => <Card key={label}><p className="text-sm text-slate-400">{label}</p><p className="mt-2 text-3xl font-semibold">{value}</p></Card>)}</div>
-          <div className="grid gap-5 xl:grid-cols-[1.5fr_1fr]">
+          <div className="grid grid-cols-2 gap-4 md:grid-cols-4">{[["Обработано", "98.4K"], ["Точность", "97.8%"], ["Сэкономлено", "418 ч"], ["Риски", "32"]].map(([label, value]) => <Card key={label}><p className="text-sm text-slate-400">{label}</p><p className="mt-2 text-2xl font-semibold md:text-3xl">{value}</p></Card>)}</div>
+          <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-[1.5fr_1fr]">
             <Card>
               <div className="mb-4 flex items-center justify-between"><h2 className="text-xl font-semibold">График аналитики</h2><Badge>Демо-данные</Badge></div>
               <LineChart data={[22, 28, 24, 42, 38, 56, 51, 72, 68, 84, 92]} />
@@ -57,7 +57,7 @@ export default function AISaaSPage() {
               <div className="mt-4 rounded-2xl border border-white/10 bg-black/30 p-4 text-sm text-slate-300">{loading ? <><Skeleton className="mb-2 h-4 w-full" /><Skeleton className="h-4 w-2/3" /></> : answer}</div>
             </Card>
           </div>
-          <div className="grid gap-5 xl:grid-cols-3">
+          <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
             <Card><h3 className="mb-4 font-semibold">Последняя активность</h3>{["Контракт распознан", "Оценка риска обновлена", "Команда приглашена", "Сценарий завершен"].map((item) => <p key={item} className="border-b border-white/5 py-3 text-sm text-slate-300">{item}</p>)}</Card>
             <Card><h3 className="mb-4 font-semibold">Документы</h3>{docs.map((doc) => <div key={doc} className="flex items-center gap-3 border-b border-white/5 py-3 text-sm"><FileText className="h-4 w-4 text-cyan-300" />{doc}</div>)}</Card>
             <Card><h3 className="mb-4 font-semibold">Пользователи и настройки</h3>{users.map((user) => <div key={user} className="flex items-center justify-between py-2 text-sm"><span className="flex items-center gap-2"><Users className="h-4 w-4 text-violet-300" />{user}</span><Settings className="h-4 w-4 text-slate-500" /></div>)}</Card>

@@ -35,10 +35,10 @@ export default function ChatPage() {
     <PageShell accent="cyan">
       <AnimatedSection className="mb-6">
         <Badge>AI Чат</Badge>
-        <h1 className="mt-4 text-4xl font-semibold md:text-6xl">Кинематографичный чат-интерфейс с фиктивным AI-поведением.</h1>
+        <h1 className="mt-4 text-3xl font-semibold md:text-6xl">Кинематографичный чат-интерфейс с фиктивным AI-поведением.</h1>
       </AnimatedSection>
-      <div className="grid min-h-[720px] gap-5 lg:grid-cols-[300px_1fr]">
-        <Card className="flex flex-col">
+      <div className="grid min-h-[500px] gap-5 lg:min-h-[720px] lg:grid-cols-[300px_1fr]">
+        <Card className="hidden flex-col lg:flex">
           <div className="mb-5 flex items-center gap-3"><PanelLeft className="text-cyan-300" /><b>Диалоги</b></div>
           <Button variant="premium" className="mb-4"><MessageSquare className="h-4 w-4" /> Новый чат</Button>
           <div className="space-y-2">
@@ -72,7 +72,7 @@ export default function ChatPage() {
                 <input type="file" className="hidden" onChange={() => { setProcessing(true); window.setTimeout(() => setProcessing(false), 1500); }} />
               </label>
               <Input value={input} onChange={(event) => setInput(event.target.value)} onKeyDown={(event) => event.key === "Enter" && send()} placeholder="Напишите демо-ассистенту" />
-              <Button variant="premium" onClick={send}><Send className="h-4 w-4" /> Отправить</Button>
+              <Button variant="premium" onClick={send}><Send className="h-4 w-4" /> <span className="hidden sm:inline">Отправить</span></Button>
             </div>
           </div>
         </Card>
