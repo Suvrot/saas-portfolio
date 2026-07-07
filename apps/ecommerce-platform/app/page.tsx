@@ -5,7 +5,7 @@ import { BarChart3, Minus, Plus, Search, ShoppingBag, Sparkles, ChevronLeft } fr
 import { AnimatedSection, Badge, Bars, Button, Card, Input, PageShell, Select } from "@portfolio/ui";
 
 const products = [
-  { id: 1, name: "Наушники Aurora", category: "Аудио", price: 329, desc: "Беспроводные наушники с активным шумоподавлением и высоким разрешением. Кожаные амбушюры, 40 часов работы от аккумулятора.", specs: "Частотный диапазон: 20Hz-40kHz | Импеданс: 32 Ом | Bluetooth 5.3 | ANC", img: "/products/4KEu3Lw.png" },
+  { id: 1, name: "Наушники Aurora", category: "Аудио", price: 329, desc: "Беспроводные наушники с активным шумоподавлением и высоким разрешением. Кожаные амбушюры, 40 часов работы от аккумулятора.", specs: "Частотный диапазон: 20Hz-40kHz | Импеданс: 32 Ом | Bluetooth 5.3 | ANC", img: "/products/byi8CwB.png" },
   { id: 2, name: "Часы Obsidian", category: "Гаджеты", price: 449, desc: "Элитные умные-часы с AMOLED-дисплеем и сапфировым стеклом. Встроенные GPS, пульсометр, 14 дней автономности.", specs: "Дисплей: 1.43 AMOLED | Батарея: 14 дней | Защита: 5ATM | GPS", img: "/products/4KEu3Lw.png" },
   { id: 3, name: "Камера Nebula", category: "Мир вокруг", price: 899, desc: "Беззеркальная камера с полнокадровым сенсором 24 Мп и съемкой 4K 120fps. Поддерживает сменные объективы и быструю серийную съемку.", specs: "Сенсор: Full Frame 24MP | ISO: 100-102400 | Серия: 5 кадров | 4K 120fps", img: "/products/lzKaRaj.png" },
   { id: 4, name: "Клавиатура Lumen", category: "Рабочее место", price: 199, desc: "Механическая клавиатура с hot-swap переключателями, RGB-подсветкой и алюминиевым корпусом.", specs: "Переключатели: Gateron Red | Раскладка: ANSI 100% | USB-C | Hot-swap", img: "/products/9GLqLhQ.png" },
@@ -37,8 +37,8 @@ export default function EcommercePage() {
       {view === "detail" && selected ? (
         <div className="grid gap-5 xl:grid-cols-[1fr_360px]">
           <Card className="overflow-hidden p-0">
-            <div className="aspect-[3/2] w-full overflow-hidden bg-slate-900">
-              <img src={selected.img} alt={selected.name} className="h-full w-full object-contain p-4" />
+            <div className="aspect-[4/3] w-full overflow-hidden bg-gradient-to-br from-slate-800 to-slate-950">
+              <img src={selected.img} alt={selected.name} className="h-full w-full object-contain p-8 drop-shadow-2xl" />
             </div>
             <div className="p-6">
               <div className="mb-4 flex items-center gap-3">
@@ -64,8 +64,8 @@ export default function EcommercePage() {
           <div className="space-y-5">
             <Card className="flex flex-col gap-3 md:flex-row"><div className="relative flex-1"><Search className="absolute left-3 top-3.5 h-4 w-4 text-slate-500" /><Input className="pl-10" placeholder="Поиск товаров" value={query} onChange={(event) => setQuery(event.target.value)} /></div><Select value={category} onChange={setCategory} options={["Все", "Аудио", "Гаджеты", "Мир вокруг", "Рабочее место"]} /></Card>
             <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">{filtered.map((product) => <Card key={product.id} className="group cursor-pointer overflow-hidden p-0" onClick={() => openDetail(product)}>
-              <div className="aspect-[3/2] w-full overflow-hidden bg-slate-900">
-                <img src={product.img} alt={product.name} className="h-full w-full object-contain p-3 transition group-hover:scale-[1.02]" />
+              <div className="aspect-[4/3] w-full overflow-hidden bg-gradient-to-br from-slate-800 to-slate-950">
+                <img src={product.img} alt={product.name} className="h-full w-full object-cover transition duration-500 group-hover:scale-110" />
               </div>
               <div className="p-4">
                 <div className="flex items-start justify-between gap-3">
