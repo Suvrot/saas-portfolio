@@ -1,4 +1,4 @@
-# SaaS Portfolio Demos
+﻿# SaaS Portfolio Demos
 
 6 премиальных демонстрационных сайтов в стиле современных SaaS-продуктов. Каждый сайт выглядит как настоящий коммерческий продукт, но работает только визуально — для портфолио.
 
@@ -9,6 +9,7 @@
 ## Live Demos
 
 ### 1. AI SaaS Platform
+
 Современная AI SaaS платформа с командным центром для интеллектуальной работы с документами.
 
 - Панель управления с аналитикой и графиками
@@ -16,11 +17,12 @@
 - Таблица документов, список пользователей, настройки
 - Sidebar, переключение вкладок, loading skeleton, fake AI ответы
 
-**Live:** https://ai-saas-platform-delta.vercel.app
+**Live:** [https://saas-portfolio-virid.vercel.app](https://saas-portfolio-virid.vercel.app)
 
 ---
 
 ### 2. Smart CRM
+
 Центр управления выручкой для премиальных отделов продаж.
 
 - Список клиентов с карточками и фильтрами
@@ -28,35 +30,38 @@
 - Календарь, уведомления, сообщения
 - Поиск, изменение статуса сделки, статическая аналитика
 
-**Live:** https://smart-crm-vert.vercel.app
+**Live:** [https://saas-portfolio-crm.vercel.app](https://saas-portfolio-crm.vercel.app)
 
 ---
 
 ### 3. Finance Dashboard
+
 Аналитика личного капитала с эффектной рыночной визуализацией.
 
-- Большой интерактивный график с переключением периода
+- Большой интерактивный график с переключением периода и категории активов
 - Баланс, доходы, расходы, инвестиции, криптовалюты
 - Круговая диаграмма распределения активов
 - Последние транзакции, карточки статистики, список акций
 
-**Live:** https://finance-dashboard-one-tau-71.vercel.app
+**Live:** [https://saas-portfolio-finance.vercel.app](https://saas-portfolio-finance.vercel.app)
 
 ---
 
 ### 4. E-Commerce Platform
+
 Премиальный интернет-магазин с визуальной админ-аналитикой.
 
 - Каталог товаров с категориями и поиском
 - Корзина с добавлением/удалением товаров
-- Страница товара с описанием
+- Страница товара с фото, описанием и характеристиками
 - Админ-панель со статистикой продаж
 
-**Live:** https://ecommerce-platform-black-tau.vercel.app
+**Live:** [https://saas-portfolio-ecommerce.vercel.app](https://saas-portfolio-ecommerce.vercel.app)
 
 ---
 
 ### 5. AI Chat Application
+
 Кинематографичный чат-интерфейс с фиктивным AI-поведением.
 
 - Sidebar с историей диалогов
@@ -64,11 +69,12 @@
 - Fake typing и fake AI ответы через 2 секунды
 - Загрузка файлов с фиктивной обработкой
 
-**Live:** https://ai-chat-app-pink-six.vercel.app
+**Live:** [https://saas-portfolio-chat.vercel.app](https://saas-portfolio-chat.vercel.app)
 
 ---
 
 ### 6. Task Management Platform
+
 Рабочая система управления задачами в стиле Linear.
 
 - Kanban Board с drag-and-drop перетаскиванием карточек
@@ -76,7 +82,7 @@
 - Проекты, команда, приоритеты, статусы, labels
 - Модальное окно задачи с редактированием статуса
 
-**Live:** https://task-manager-rho-two-90.vercel.app
+**Live:** [https://saas-portfolio-tasks.vercel.app](https://saas-portfolio-tasks.vercel.app)
 
 ---
 
@@ -94,4 +100,4 @@ npm run dev:tasks     # http://localhost:3006
 
 ## GitHub
 
-https://github.com/Suvrot/saas-portfolio
+[https://github.com/Suvrot/saas-portfolio](https://github.com/Suvrot/saas-portfolio)

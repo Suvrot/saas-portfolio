@@ -31,7 +31,7 @@ export default function EcommercePage() {
     <PageShell accent="rose">
       <AnimatedSection className="mb-6 grid gap-5 lg:grid-cols-[1.15fr_.85fr]">
         <div><Badge>E-Commerce Платформа</Badge><h1 className="mt-4 text-3xl font-semibold md:text-6xl">Премиальный интернет-магазин с визуальной админ-аналитикой.</h1><p className="mt-4 max-w-2xl text-slate-400">Статический каталог товаров, поиск, категории, карточка товара, корзина и панели продаж в стиле админки.</p></div>
-        <Card className="relative overflow-hidden"><div className="absolute inset-0 bg-gradient-to-br from-rose-400/20 to-cyan-400/10" /><div className="relative"><ShoppingBag className="mb-8 h-10 w-10 text-rose-300" /><p className="text-3xl font-semibold md:text-5xl">.8K</p><p className="text-slate-400">Демо-продажи за месяц</p><Bars data={[20, 34, 25, 48, 52, 64, 58]} color="from-rose-400 to-orange-500" /></div></Card>
+        <Card className="relative overflow-hidden"><div className="absolute inset-0 bg-gradient-to-br from-rose-400/20 to-cyan-400/10" /><div className="relative"><ShoppingBag className="mb-8 h-10 w-10 text-rose-300" /><p className="text-3xl font-semibold md:text-5xl">$42.8K</p><p className="text-slate-400">Демо-продажи за месяц</p><Bars data={[20, 34, 25, 48, 52, 64, 58]} color="from-rose-400 to-orange-500" /></div></Card>
       </AnimatedSection>
 
       {view === "detail" && selected ? (
@@ -44,7 +44,7 @@ export default function EcommercePage() {
                 <Badge>{selected.category}</Badge>
               </div>
               <h2 className="text-3xl font-semibold md:text-4xl">{selected.name}</h2>
-              <p className="mt-2 text-2xl font-bold text-rose-300"></p>
+              <p className="mt-2 text-2xl font-bold text-rose-300">${selected.price}</p>
               <p className="mt-4 text-slate-300 leading-relaxed">{selected.desc}</p>
               <div className="mt-4 rounded-2xl bg-white/[.05] p-4">
                 <p className="text-sm text-slate-400 font-mono">{selected.specs}</p>
@@ -53,7 +53,7 @@ export default function EcommercePage() {
             </div>
           </Card>
           <div className="space-y-5">
-            <Card><h3 className="mb-4 font-semibold">Корзина</h3>{cart.length === 0 ? <p className="text-sm text-slate-400">Корзина пуста.</p> : cart.map((id, index) => { const product = products.find((item) => item.id === id)!; return <div key={\-\} className="flex items-center justify-between border-b border-white/5 py-3 text-sm"><span>{product.name}</span><span></span></div>; })}<div className="mt-4 flex justify-between text-lg font-semibold"><span>Итого</span><span></span></div></Card>
+            <Card><h3 className="mb-4 font-semibold">Корзина</h3>{cart.length === 0 ? <p className="text-sm text-slate-400">Корзина пуста.</p> : cart.map((id, index) => { const product = products.find((item) => item.id === id)!; return <div key={"ci" + id + "-" + index} className="flex items-center justify-between border-b border-white/5 py-3 text-sm"><span>{product.name}</span><span>${product.price}</span></div>; })}<div className="mt-4 flex justify-between text-lg font-semibold"><span>Итого</span><span>${total}</span></div></Card>
             <Card><h3 className="mb-4 flex items-center gap-2 font-semibold"><BarChart3 className="h-4 w-4 text-cyan-300" /> Админ-панель</h3>{["Заказы", "Конверсия", "Постоянные клиенты"].map((label, index) => <div key={label} className="flex justify-between rounded-2xl p-3 hover:bg-white/[.06]"><span>{label}</span><span>{[1284, "8.4%", "42%"][index]}</span></div>)}</Card>
           </div>
         </div>
@@ -66,14 +66,14 @@ export default function EcommercePage() {
               <div className="p-4">
                 <div className="flex items-start justify-between gap-3">
                   <div><h3 className="font-semibold">{product.name}</h3><p className="text-sm text-slate-400">{product.category}</p></div>
-                  <b></b>
+                  <b>${product.price}</b>
                 </div>
                 <Button className="mt-3 w-full" variant="secondary" onClick={(event) => { event.stopPropagation(); setCart([...cart, product.id]); }}><Plus className="h-4 w-4" /> В корзину</Button>
               </div>
             </Card>)}</div>
           </div>
           <div className="space-y-5">
-            <Card><div className="mb-4 flex items-center justify-between"><h2 className="font-semibold">Корзина</h2><Badge>{cart.length} шт.</Badge></div>{cart.length === 0 ? <p className="text-sm text-slate-400">Корзина пуста.</p> : cart.map((id, index) => { const product = products.find((item) => item.id === id)!; return <div key={\-\} className="flex items-center justify-between border-b border-white/5 py-3 text-sm"><span>{product.name}</span><button onClick={() => setCart(cart.filter((_, ci) => ci !== index))} className="text-rose-300"><Minus className="h-4 w-4" /></button></div>; })}<div className="mt-4 flex justify-between text-lg font-semibold"><span>Итого</span><span></span></div></Card>
+            <Card><div className="mb-4 flex items-center justify-between"><h2 className="font-semibold">Корзина</h2><Badge>{cart.length} шт.</Badge></div>{cart.length === 0 ? <p className="text-sm text-slate-400">Корзина пуста.</p> : cart.map((id, index) => { const product = products.find((item) => item.id === id)!; return <div key={"c" + id + "-" + index} className="flex items-center justify-between border-b border-white/5 py-3 text-sm"><span>{product.name}</span><button onClick={() => setCart(cart.filter((_, ci) => ci !== index))} className="text-rose-300"><Minus className="h-4 w-4" /></button></div>; })}<div className="mt-4 flex justify-between text-lg font-semibold"><span>Итого</span><span>${total}</span></div></Card>
             <Card><h3 className="mb-4 flex items-center gap-2 font-semibold"><BarChart3 className="h-4 w-4 text-cyan-300" /> Админ-панель</h3>{["Заказы", "Конверсия", "Постоянные клиенты"].map((label, index) => <div key={label} className="flex justify-between rounded-2xl p-3 hover:bg-white/[.06]"><span>{label}</span><span>{[1284, "8.4%", "42%"][index]}</span></div>)}<div className="mt-4 rounded-3xl bg-white/[.05] p-4"><Sparkles className="mb-2 text-rose-300" /><p className="text-sm text-slate-400">Без оформления заказа и платежей. Только визуальное демо.</p></div></Card>
           </div>
         </div>
