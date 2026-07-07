@@ -1,6 +1,6 @@
 {
-  "buildCommand": "npm run build:crm",
-  "outputDirectory": "apps/smart-crm/.next",
+  "buildCommand": "npm run build:ai",
+  "outputDirectory": "apps/ai-saas-platform/.next",
   "framework": "nextjs",
   "installCommand": "npm install"
 }
