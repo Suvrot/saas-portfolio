@@ -15,20 +15,20 @@ const marketData: Record<AssetType, Record<string, number[]>> = {
   income: { "1D": [18, 20, 22, 24, 26, 28, 30, 32, 34], "1W": [25, 26, 27, 28, 29, 30, 31, 32, 33], "1M": [40, 42, 44, 46, 48, 50, 52, 54, 56], "1Y": [70, 74, 78, 82, 86, 90, 94, 98, 102] }
 };
 
-const assetFilters: { key: AssetType; label: string }[] = [
-  { key: "all", label: "Все активы" },
-  { key: "stocks", label: "Акции" },
-  { key: "crypto", label: "Крипто" },
-  { key: "income", label: "Доходы" }
+const assetFilters: { key: AssetType; label: string; balance: string }[] = [
+  { key: "all", label: "Все активы", balance: "$156,230.00" },
+  { key: "stocks", label: "Акции", balance: "$91,300.00" },
+  { key: "crypto", label: "Крипто", balance: "$31,720.00" },
+  { key: "income", label: "Доходы", balance: "$24,800.00" }
 ];
 
 const transactions = ["Apple Pay - Рабочее место", "Дивиденды - NVDA", "Перевод - Сейф", "Подписка - Cloud", "Криптообмен - ETH"];
 const assets = ["AAPL", "NVDA", "TSLA", "BTC", "ETH", "SOL"];
 const financeCards: { Icon: LucideIcon; label: string; value: string; trend: string }[] = [
-  { Icon: WalletCards, label: "Доходы", value: ",800", trend: "+12%" },
-  { Icon: ArrowDownRight, label: "Расходы", value: ",410", trend: "-4%" },
-  { Icon: Landmark, label: "Инвестиции", value: ",300", trend: "+18%" },
-  { Icon: Bitcoin, label: "Крипто", value: ",720", trend: "+9%" }
+  { Icon: WalletCards, label: "Доходы", value: "$24,800", trend: "+12%" },
+  { Icon: ArrowDownRight, label: "Расходы", value: "$8,410", trend: "-4%" },
+  { Icon: Landmark, label: "Инвестиции", value: "$91,300", trend: "+18%" },
+  { Icon: Bitcoin, label: "Крипто", value: "$31,720", trend: "+9%" }
 ];
 
 export default function FinancePage() {
@@ -40,7 +40,9 @@ export default function FinancePage() {
     return raw.map((value, index) => value + index * (period === "1Y" ? 4 : 1));
   }, [assetFilter, period]);
 
+  const currentFilter = assetFilters.find((f) => f.key === assetFilter)!;
   const chartColor = assetFilter === "all" ? "#34d399" : assetFilter === "stocks" ? "#22d3ee" : assetFilter === "crypto" ? "#a78bfa" : "#f59e0b";
+  const chartLabel = assetFilter === "all" ? "Общий баланс" : assetFilter === "stocks" ? "Акции" : assetFilter === "crypto" ? "Криптовалюта" : "Доходы";
 
   return (
     <PageShell accent="emerald">
@@ -51,8 +53,8 @@ export default function FinancePage() {
       <div className="grid gap-5 xl:grid-cols-[1fr_360px]">
         <div className="space-y-5">
           <Card>
-            <div className="mb-4 flex items-center justify-between">
-              <div><p className="text-sm text-slate-400">Общий баланс</p><h2 className="text-3xl font-semibold md:text-4xl">,027.21</h2></div>
+            <div className="mb-4 flex items-center justify-between flex-wrap gap-3">
+              <div><p className="text-sm text-slate-400">{chartLabel}</p><h2 className="text-3xl font-semibold md:text-4xl">{currentFilter.balance}</h2></div>
               <div className="flex flex-wrap gap-1">{assetFilters.map(({ key, label }) => <button key={key} onClick={() => setAssetFilter(key)} className={cn("rounded-xl border border-white/10 px-3 py-1.5 text-xs transition", assetFilter === key ? "border-emerald-400/50 bg-emerald-400/10 text-emerald-200" : "text-slate-400 hover:bg-white/[.06]")}>{label}</button>)}</div>
             </div>
             <LineChart data={data} color={chartColor} className="h-72" />
