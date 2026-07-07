@@ -1,26 +1,13 @@
-# SaaS Portfolio Demos
+Демонстрационные версии SaaS-портфолио
 
-Six separate visual-only SaaS demo websites built with Next.js 15, React, TypeScript, Tailwind CSS, shadcn-style UI primitives, Framer Motion, and Lucide Icons.
+Шесть отдельных демонстрационных веб-сайтов SaaS, предназначенных только для визуализации, созданных с использованием Next.js 15, React, TypeScript, Tailwind CSS, примитивов пользовательского интерфейса в стиле shadcn, Framer Motion и иконок Lucide.
 
-## Run
+Каждое приложение является независимым в разделе apps/*. Все данные статичны, а все взаимодействия являются поддельными / доступны только для демонстрации.
+Vercel Deploy
 
-```bash
-npm install
-npm run dev:ai
-npm run dev:crm
-npm run dev:finance
-npm run dev:ecommerce
-npm run dev:chat
-npm run dev:tasks
-```
+Этот репозиторий является монорепозиторием. Развертывайте каждую демонстрацию как отдельный проект Vercel из того же репозитория Git.
 
-Each app is independent under `apps/*`. All data is static and all interactions are fake/demo-only.
 
-## Vercel Deploy
-
-This repository is a monorepo. Deploy each demo as a separate Vercel project from the same Git repository.
-
-Use these settings in Vercel:
 
 | Demo | Root Directory | Build Command | Output Directory |
 | --- | --- | --- | --- |
@@ -31,16 +18,3 @@ Use these settings in Vercel:
 | AI Chat Application | `.` | `npm run build:chat` | `apps/ai-chat-app/.next` |
 | Task Management Platform | `.` | `npm run build:tasks` | `apps/task-manager/.next` |
 
-Install command:
-
-```bash
-npm install
-```
-
-Node.js version:
-
-```text
-20.x or newer
-```
-
-Do not set the Vercel root directory to `apps/...` unless you also enable access to files outside the root directory. The shared `packages/ui` workspace is required by all six apps.
