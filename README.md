@@ -1,20 +1,97 @@
-Демонстрационные версии SaaS-портфолио
+# SaaS Portfolio Demos
 
-Шесть отдельных демонстрационных веб-сайтов SaaS, предназначенных только для визуализации, созданных с использованием Next.js 15, React, TypeScript, Tailwind CSS, примитивов пользовательского интерфейса в стиле shadcn, Framer Motion и иконок Lucide.
+6 премиальных демонстрационных сайтов в стиле современных SaaS-продуктов. Каждый сайт выглядит как настоящий коммерческий продукт, но работает только визуально — для портфолио.
 
-Каждое приложение является независимым в разделе apps/*. Все данные статичны, а все взаимодействия являются поддельными / доступны только для демонстрации.
-Vercel Deploy
+**Стек:** Next.js 15, React, TypeScript, Tailwind CSS, shadcn/ui, Framer Motion, Lucide Icons
 
-Этот репозиторий является монорепозиторием. Развертывайте каждую демонстрацию как отдельный проект Vercel из того же репозитория Git.
+---
 
+## Live Demos
 
+### 1. AI SaaS Platform
+Современная AI SaaS платформа с командным центром для интеллектуальной работы с документами.
 
-| Demo | Output Directory |
-| --- | --- | --- | --- |
-| AI SaaS Platform |  `apps/ai-saas-platform/.next` |
-| Smart CRM | | `apps/smart-crm/.next` |
-| Finance Dashboard |    | `apps/finance-dashboard/.next` |
-| E-Commerce Platform |   | `apps/ecommerce-platform/.next` |
-| AI Chat Application |   | `apps/ai-chat-app/.next` |
-| Task Management Platform |   | `apps/task-manager/.next` |
+- Панель управления с аналитикой и графиками
+- AI Ассистент с загрузкой документов и фиктивным анализом
+- Таблица документов, список пользователей, настройки
+- Sidebar, переключение вкладок, loading skeleton, fake AI ответы
 
+**Live:** https://ai-saas-platform-dj7lx74z2-supermax44676-5946s-projects.vercel.app
+
+---
+
+### 2. Smart CRM
+Центр управления выручкой для премиальных отделов продаж.
+
+- Список клиентов с карточками и фильтрами
+- Сделки и воронка продаж
+- Календарь, уведомления, сообщения
+- Поиск, изменение статуса сделки, статическая аналитика
+
+**Live:** https://smart-d1g76ugoi-supermax44676-5946s-projects.vercel.app
+
+---
+
+### 3. Finance Dashboard
+Аналитика личного капитала с эффектной рыночной визуализацией.
+
+- Большой интерактивный график с переключением периода
+- Баланс, доходы, расходы, инвестиции, криптовалюты
+- Круговая диаграмма распределения активов
+- Последние транзакции, карточки статистики, список акций
+
+**Live:** https://finance-dashboard-m1nwtiilb-supermax44676-5946s-projects.vercel.app
+
+---
+
+### 4. E-Commerce Platform
+Премиальный интернет-магазин с визуальной админ-аналитикой.
+
+- Каталог товаров с категориями и поиском
+- Корзина с добавлением/удалением товаров
+- Страница товара с описанием
+- Админ-панель со статистикой продаж
+
+**Live:** https://ecommerce-platform-1y8y8gy2c-supermax44676-5946s-projects.vercel.app
+
+---
+
+### 5. AI Chat Application
+Кинематографичный чат-интерфейс с фиктивным AI-поведением.
+
+- Sidebar с историей диалогов
+- Окно сообщений с выбором модели
+- Fake typing и fake AI ответы через 2 секунды
+- Загрузка файлов с фиктивной обработкой
+
+**Live:** https://ai-chat-cjz3u427k-supermax44676-5946s-projects.vercel.app
+
+---
+
+### 6. Task Management Platform
+Рабочая система управления задачами в стиле Linear.
+
+- Kanban Board с drag-and-drop перетаскиванием карточек
+- Таблица задач с фильтрами
+- Проекты, команда, приоритеты, статусы, labels
+- Модальное окно задачи с редактированием статуса
+
+**Live:** https://task-manager-lxiayhuh2-supermax44676-5946s-projects.vercel.app
+
+---
+
+## Запуск локально
+
+```bash
+npm install
+npm run dev:ai        # http://localhost:3001
+npm run dev:crm       # http://localhost:3002
+npm run dev:finance   # http://localhost:3003
+npm run dev:ecommerce # http://localhost:3004
+npm run dev:chat      # http://localhost:3005
+npm run dev:tasks     # http://localhost:3006
+```
+
+## GitHub
+
+https://github.com/Suvrot/saas-portfolio
