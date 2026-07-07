@@ -12,13 +12,10 @@ const map = {
 
 const script = map[project];
 if (script) {
-  console.log("Building project:", project, "→", script);
+  console.log("Building project:", project, "\u2192", script);
   execSync("npm run " + script, { stdio: "inherit" });
 } else {
-  console.log("Unknown project:", project, "— building all apps");
-  const scripts = Object.values(map);
-  for (const s of scripts) {
-    console.log("Building:", s);
-    execSync("npm run " + s, { stdio: "inherit" });
-  }
+  console.error("ERROR: Unknown VERCEL_PROJECT_NAME:", project);
+  console.error("Expected one of:", Object.keys(map).join(", "));
+  process.exit(1);
 }
