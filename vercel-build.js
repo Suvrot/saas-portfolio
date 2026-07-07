@@ -11,10 +11,14 @@ const map = {
 };
 
 const script = map[project];
-if (!script) {
-  console.error("Unknown project:", project);
-  process.exit(1);
+if (script) {
+  console.log("Building project:", project, "→", script);
+  execSync("npm run " + script, { stdio: "inherit" });
+} else {
+  console.log("Unknown project:", project, "— building all apps");
+  const scripts = Object.values(map);
+  for (const s of scripts) {
+    console.log("Building:", s);
+    execSync("npm run " + s, { stdio: "inherit" });
+  }
 }
-
-console.log("Building project:", project, "→", script);
-execSync("npm run " + script, { stdio: "inherit" });
