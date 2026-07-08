@@ -1,6 +1,6 @@
 {
-  "installCommand": "cd ../.. && npm install",
-  "buildCommand": "cd ../.. && npm run build:chat",
+  "installCommand": "npm install",
+  "buildCommand": "npm run build:chat",
   "outputDirectory": "apps/ai-chat-app/.next",
   "framework": "nextjs"
 }
