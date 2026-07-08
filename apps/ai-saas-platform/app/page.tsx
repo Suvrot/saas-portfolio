@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { motion } from "framer-motion";
 import { Activity, BrainCircuit, FileText, Menu, Settings, Sparkles, Upload, Users, X } from "lucide-react";
 import { AnimatedSection, Badge, Bars, Button, Card, Input, LineChart, PageShell, Skeleton, cn } from "@portfolio/ui";
 
@@ -10,7 +9,7 @@ const docs = ["Презентация инвесторам.pdf", "Контрак
 const users = ["Майя Чен", "Алекс Морозов", "Рина Патель", "Ной Стоун"];
 
 export default function AISaaSPage() {
-  const [sidebarOpen, setSidebarOpen] = useState(true);
+  const [sidebarOpen, setSidebarOpen] = useState(false);
   const [tab, setTab] = useState("Панель");
   const [file, setFile] = useState("Документ не выбран");
   const [loading, setLoading] = useState(false);
@@ -40,10 +39,14 @@ export default function AISaaSPage() {
         <Button variant="secondary" className="hidden lg:inline-flex" onClick={() => setSidebarOpen(!sidebarOpen)}><Menu className="h-4 w-4" /> Меню</Button>
       </div>
       <div className="grid gap-5 lg:grid-cols-[260px_1fr]">
-        <motion.aside animate={{ width: sidebarOpen ? 260 : 76 }} className={`${sidebarOpen ? "fixed inset-0 z-50 block w-full bg-slate-950/95 p-4 backdrop-blur-2xl" : "hidden"} lg:relative lg:block lg:w-auto lg:bg-transparent lg:p-4 overflow-hidden rounded-3xl border border-white/10 bg-black/35 backdrop-blur-2xl`}>
-          <div className="mb-6 flex items-center gap-3"><div className="rounded-2xl bg-cyan-400 p-2 text-slate-950"><BrainCircuit /></div>{sidebarOpen && <b>NeuralOS</b>}</div>
-          <nav className="space-y-2">{tabs.map((item) => <button key={item} onClick={() => setTab(item)} className={cn("flex w-full items-center gap-3 rounded-2xl px-3 py-3 text-left text-sm text-slate-400 hover:bg-white/[.07] hover:text-white", tab === item && "bg-cyan-400/15 text-cyan-200")}><Activity className="h-4 w-4" />{sidebarOpen && item}</button>)}</nav>
-        </motion.aside>
+        {sidebarOpen && <div className="fixed inset-0 z-40 bg-black/60 backdrop-blur-sm lg:hidden" onClick={() => setSidebarOpen(false)} />}
+        <aside className={`${sidebarOpen ? "fixed inset-y-0 left-0 z-50 w-[260px] p-4" : "hidden"} lg:relative lg:block lg:w-auto lg:p-4 overflow-hidden rounded-3xl border border-white/10 bg-slate-950/95 backdrop-blur-2xl`}>
+          <div className="mb-6 flex items-center gap-3">
+            <div className="rounded-2xl bg-cyan-400 p-2 text-slate-950"><BrainCircuit /></div>
+            <b>NeuralOS</b>
+          </div>
+          <nav className="space-y-2">{tabs.map((item) => <button key={item} onClick={() => { setTab(item); setSidebarOpen(false); }} className={cn("flex w-full items-center gap-3 rounded-2xl px-3 py-3 text-left text-sm text-slate-400 hover:bg-white/[.07] hover:text-white", tab === item && "bg-cyan-400/15 text-cyan-200")}><Activity className="h-4 w-4" />{item}</button>)}</nav>
+        </aside>
         <AnimatedSection className="space-y-5">
           <div className="grid grid-cols-2 gap-4 md:grid-cols-4">{[["Обработано", "98.4K"], ["Точность", "97.8%"], ["Сэкономлено", "418 ч"], ["Риски", "32"]].map(([label, value]) => <Card key={label}><p className="text-sm text-slate-400">{label}</p><p className="mt-2 text-2xl font-semibold md:text-3xl">{value}</p></Card>)}</div>
           <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-[1.5fr_1fr]">
