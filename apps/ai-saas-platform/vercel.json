@@ -1,6 +1,7 @@
 {
-  "installCommand": "cd ../.. && npm install",
-  "buildCommand": "cd ../.. && npm run build:ai",
+  "installCommand": "npm install",
+  "buildCommand": "npm run build:ai",
   "outputDirectory": "apps/ai-saas-platform/.next",
-  "framework": "nextjs"
+  "framework": "nextjs",
+  "rootDirectory": "../.."
 }
