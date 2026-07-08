@@ -28,14 +28,19 @@ export default function AISaaSPage() {
   return (
     <PageShell accent="cyan">
       <div className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-        <div>
-          <Badge>AI SaaS Платформа</Badge>
-          <h1 className="mt-4 text-3xl font-semibold tracking-tight md:text-6xl">Командный центр для интеллектуальной работы с документами.</h1>
+        <div className="flex items-center gap-3">
+          <button onClick={() => setSidebarOpen(!sidebarOpen)} className="rounded-2xl bg-cyan-400/10 p-2 text-cyan-400 lg:hidden">
+            {sidebarOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          </button>
+          <div>
+            <Badge>AI SaaS Платформа</Badge>
+            <h1 className="mt-4 text-2xl font-semibold tracking-tight sm:text-3xl md:text-6xl">Командный центр для интеллектуальной работы с документами.</h1>
+          </div>
         </div>
         <Button variant="secondary" className="hidden lg:inline-flex" onClick={() => setSidebarOpen(!sidebarOpen)}><Menu className="h-4 w-4" /> Меню</Button>
       </div>
       <div className="grid gap-5 lg:grid-cols-[260px_1fr]">
-        <motion.aside animate={{ width: sidebarOpen ? 260 : 76 }} className="hidden overflow-hidden rounded-3xl border border-white/10 bg-black/35 p-4 backdrop-blur-2xl lg:block">
+        <motion.aside animate={{ width: sidebarOpen ? 260 : 76 }} className={`${sidebarOpen ? "fixed inset-0 z-50 block w-full bg-slate-950/95 p-4 backdrop-blur-2xl" : "hidden"} lg:relative lg:block lg:w-auto lg:bg-transparent lg:p-4 overflow-hidden rounded-3xl border border-white/10 bg-black/35 backdrop-blur-2xl`}>
           <div className="mb-6 flex items-center gap-3"><div className="rounded-2xl bg-cyan-400 p-2 text-slate-950"><BrainCircuit /></div>{sidebarOpen && <b>NeuralOS</b>}</div>
           <nav className="space-y-2">{tabs.map((item) => <button key={item} onClick={() => setTab(item)} className={cn("flex w-full items-center gap-3 rounded-2xl px-3 py-3 text-left text-sm text-slate-400 hover:bg-white/[.07] hover:text-white", tab === item && "bg-cyan-400/15 text-cyan-200")}><Activity className="h-4 w-4" />{sidebarOpen && item}</button>)}</nav>
         </motion.aside>

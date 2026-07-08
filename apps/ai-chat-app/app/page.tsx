@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Bot, FileUp, MessageSquare, PanelLeft, Send, Settings, UserRound } from "lucide-react";
+import { Bot, FileUp, MessageSquare, PanelLeft, Send, Settings, UserRound, Menu, X } from "lucide-react";
 import { AnimatedSection, Badge, Button, Card, Input, PageShell, Select, Skeleton } from "@portfolio/ui";
 
 type Message = { role: "user" | "assistant"; text: string };
@@ -16,6 +16,7 @@ export default function ChatPage() {
   const [typing, setTyping] = useState(false);
   const [processing, setProcessing] = useState(false);
   const [model, setModel] = useState("Nova Pro");
+  const [sidebarOpen, setSidebarOpen] = useState(false);
 
   function send() {
     if (!input.trim()) return;
@@ -34,11 +35,18 @@ export default function ChatPage() {
   return (
     <PageShell accent="cyan">
       <AnimatedSection className="mb-6">
-        <Badge>AI Чат</Badge>
-        <h1 className="mt-4 text-3xl font-semibold md:text-6xl">Кинематографичный чат-интерфейс с фиктивным AI-поведением.</h1>
+        <div className="flex items-center gap-3">
+          <button onClick={() => setSidebarOpen(!sidebarOpen)} className="rounded-2xl bg-cyan-400/10 p-2 text-cyan-400 lg:hidden">
+            {sidebarOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          </button>
+          <div>
+            <Badge>AI Чат</Badge>
+            <h1 className="mt-4 text-2xl font-semibold md:text-6xl">Кинематографичный чат-интерфейс с фиктивным AI-поведением.</h1>
+          </div>
+        </div>
       </AnimatedSection>
       <div className="grid min-h-[500px] gap-5 lg:min-h-[720px] lg:grid-cols-[300px_1fr]">
-        <Card className="hidden flex-col lg:flex">
+        <Card className={`${sidebarOpen ? "flex" : "hidden"} flex-col lg:flex`}>
           <div className="mb-5 flex items-center gap-3"><PanelLeft className="text-cyan-300" /><b>Диалоги</b></div>
           <Button variant="premium" className="mb-4"><MessageSquare className="h-4 w-4" /> Новый чат</Button>
           <div className="space-y-2">
