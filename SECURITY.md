@@ -1,5 +1,5 @@
-# Security Policy
+# Политика безопасности
 
-If you discover a security vulnerability in this project, please report it by opening an issue on GitHub. 
+Если вы обнаружите уязвимость в системе безопасности этого проекта, пожалуйста, сообщите о ней, создав задачу (issue) на GitHub.
 
-Please describe the vulnerability in detail, providing steps to reproduce it if possible. We will review all reports and take appropriate action.
+Пожалуйста, подробно опишите уязвимость и, по возможности, укажите шаги для её воспроизведения. Мы изучим все сообщения и примем соответствующие меры.
