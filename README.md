@@ -86,6 +86,10 @@
 
 ---
 
+## Security
+
+If you discover a security vulnerability in this project, please report it following the guidelines in [SECURITY.md](SECURITY.md).
+
 ## Запуск локально
 
 ```bash
