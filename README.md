@@ -86,17 +86,7 @@
 
 ---
 
-## Запуск локально
 
-```bash
-npm install
-npm run dev:ai        # http://localhost:3001
-npm run dev:crm       # http://localhost:3002
-npm run dev:finance   # http://localhost:3003
-npm run dev:ecommerce # http://localhost:3004
-npm run dev:chat      # http://localhost:3005
-npm run dev:tasks     # http://localhost:3006
-```
 
 ## GitHub
 
